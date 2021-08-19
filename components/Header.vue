@@ -2,7 +2,7 @@
   <header>
     <nav class="main-nav">
       <div class="name-title">
-        <p>DAVID</p>
+        <p>Emmanuel</p>
         <font-awesome-icon icon="bars" class="icon" @click="toggleNav(true)" />
       </div>
       <n-link to="/">
