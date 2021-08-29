@@ -15,7 +15,7 @@
 		</div>
 
  	<comics-section title="ALL COMICS" :comics="comics" @openModal="openModal($event)"/>
-	 <infinite-loading 
+	 <infinite-loading
    spinner="spiral"
    @infinite="infiniteScroll"
 ></infinite-loading>
@@ -28,7 +28,7 @@ export default {
 		return{
 			comics:[],
 			offset:0,
-			apikey:'6740ae373da1c47cbdc80ee83dfc9158',
+			apikey:'d2a508ec092852bfb6b4d607085c6e08',
 			year:'',
 			showModal:false,
 			selected:{}
@@ -46,8 +46,8 @@ export default {
 		async openModal(comic){
 			this.showModal=true
 			console.log(comic);
-			
-		this.selected = comic	
+
+		this.selected = comic
 		},
 	async getCharacter(){
 		let res = await this.$axios.$get(this.url)
@@ -85,7 +85,7 @@ watch:{
 				this.$axios.get(`characters/1010338/comics?startYear=${this.year}&apikey=${this.apikey}`)
 			.then(res=>{
 				this.comics = res.data.data.results;
-				
+
 			})  .catch((err) => {
             console.log(err)
           })
@@ -94,11 +94,11 @@ watch:{
 	},
 	showModal(){
 		console.log("watch show");
-		
+
 		const page = document.querySelector('body');
 		if(this.showModal){
 			page.style.height = '100vh';
-			page.style.overflow="hidden";	
+			page.style.overflow="hidden";
 		}
 		else{
 			page.style.height = '100%';
